@@ -23,7 +23,10 @@ const outDir = join("bench", "out", values.label);
 mkdirSync(outDir, { recursive: true });
 
 // Warm the server so no run pays for a first render or a cold cache.
-for (let i = 0; i < 20; i++) await fetch(values.url).then((r) => r.text());
+// Same UA as Lighthouse's mobile run, so bot filters treat it as a visitor.
+const UA =
+  "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36";
+for (let i = 0; i < 20; i++) await fetch(values.url, { headers: { "user-agent": UA } }).then((r) => r.text());
 
 const metrics = {
   lcp: "largest-contentful-paint",

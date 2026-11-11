@@ -58,7 +58,10 @@ const probe = `(() => {
 })();`;
 
 // Warm the server.
-for (let i = 0; i < 20; i++) await fetch(values.url).then((r) => r.text());
+// Same UA as Lighthouse's mobile run, so bot filters treat it as a visitor.
+const UA =
+  "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36";
+for (let i = 0; i < 20; i++) await fetch(values.url, { headers: { "user-agent": UA } }).then((r) => r.text());
 
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const results = [];
@@ -70,6 +73,8 @@ for (let i = 1; i <= Number(values.runs); i++) {
     deviceScaleFactor: 1.75,
     isMobile: true,
     hasTouch: true,
+    // Headless Chrome's own UA says "HeadlessChrome", which bot filters skip.
+    userAgent: UA,
   });
   await context.addInitScript(probe);
   const page = await context.newPage();
@@ -147,7 +152,7 @@ console.log(
 // One frame every 250 ms from navigation start, as a single PNG.
 async function writeFilmstrip(browser, shots, timeOrigin, run) {
   const step = 250;
-  const end = Math.min(watchMs, 4500);
+  const end = Math.min(watchMs, 3000);
   const cells = [];
   for (let t = 0; t <= end; t += step) {
     const frame = shots.filter((s) => s.wall - timeOrigin <= t).at(-1);
