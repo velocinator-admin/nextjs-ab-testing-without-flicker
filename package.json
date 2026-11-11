@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node scripts/start.mjs",
     "typecheck": "next typegen && tsc --noEmit",
     "bench:lighthouse": "node bench/lighthouse.mjs",
     "bench:flicker": "node bench/flicker.mjs"
