@@ -90,18 +90,21 @@ for (let i = 1; i <= Number(values.runs); i++) {
   await cdp.send("Network.emulateNetworkConditions", NETWORK);
   await cdp.send("Emulation.setCPUThrottlingRate", { rate: CPU_RATE });
 
-  const shots = [];
-  cdp.on("Page.screencastFrame", async (f) => {
-    shots.push({ wall: f.metadata.timestamp * 1000, data: f.data });
-    await cdp.send("Page.screencastFrameAck", { sessionId: f.sessionId }).catch(() => {});
-  });
-  await cdp.send("Page.startScreencast", { format: "jpeg", quality: 70, maxWidth: 412, maxHeight: 823 });
-
+  // Screenshots come from a Chrome trace (what Lighthouse's filmstrip uses);
+  // unlike a CDP screencast they survive the renderer swap on navigation.
+  await browser.startTracing(page, { screenshots: true, categories: ["devtools.timeline", "blink.user_timing", "disabled-by-default-devtools.screenshot"] });
   await page.goto(values.url, { waitUntil: "load" });
   await page.waitForTimeout(Math.max(0, watchMs - 0));
   const probeData = await page.evaluate(() => window.__probe);
-  const timeOrigin = await page.evaluate(() => performance.timeOrigin);
-  await cdp.send("Page.stopScreencast");
+  const trace = JSON.parse((await browser.stopTracing()).toString());
+  const events = trace.traceEvents ?? trace;
+  const navStart = events
+    .filter((e) => e.name === "navigationStart" && e.args?.data?.documentLoaderURL?.startsWith(values.url))
+    .at(-1)?.ts;
+  const shots = events
+    .filter((e) => e.name === "Screenshot" && e.args?.snapshot && navStart)
+    .map((e) => ({ t: (e.ts - navStart) / 1000, data: e.args.snapshot }))
+    .sort((x, y) => x.t - y.t);
 
   const visible = probeData.frames.filter((f) => f.visible);
   const firstVisible = visible[0];
@@ -126,7 +129,7 @@ for (let i = 1; i <= Number(values.runs); i++) {
 
   if (!filmstripDone && run.variant === "b" && shots.length) {
     filmstripDone = true;
-    await writeFilmstrip(browser, shots, timeOrigin, run);
+    await writeFilmstrip(browser, shots, run);
   }
   await context.close();
 }
@@ -156,12 +159,12 @@ console.log(
 );
 
 // One frame every 250 ms from navigation start, as a single PNG.
-async function writeFilmstrip(browser, shots, timeOrigin, run) {
+async function writeFilmstrip(browser, shots, run) {
   const step = 250;
   const end = Math.min(watchMs, 3000);
   const cells = [];
   for (let t = 0; t <= end; t += step) {
-    const frame = shots.filter((s) => s.wall - timeOrigin <= t).at(-1);
+    const frame = shots.filter((s) => s.t <= t).at(-1);
     cells.push({ t, src: frame ? `data:image/jpeg;base64,${frame.data}` : null });
   }
   const html = `<html><body style="margin:0;background:#fff;font:600 14px system-ui">
@@ -180,5 +183,6 @@ async function writeFilmstrip(browser, shots, timeOrigin, run) {
   await p.setContent(html, { waitUntil: "load" });
   await p.screenshot({ path: join(outDir, "filmstrip.png"), fullPage: true });
   await ctx.close();
-  writeFileSync(join(outDir, "filmstrip-run.json"), `${JSON.stringify({ run: run.run, frames: run.frames }, null, 2)}\n`);
+  const shotTimes = shots.map((s) => Math.round(s.t));
+  writeFileSync(join(outDir, "filmstrip-run.json"), `${JSON.stringify({ run: run.run, frames: run.frames, shotTimes }, null, 2)}\n`);
 }
