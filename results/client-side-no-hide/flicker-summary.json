@@ -1,0 +1,205 @@
+{
+  "label": "client-side-no-hide",
+  "runs": 10,
+  "variantBRuns": 5,
+  "runsWithFlicker": 5,
+  "medianHeadlineVisibleAt": 1183,
+  "medianLcp": 1940,
+  "maxCls": 0.0286,
+  "throttling": {
+    "network": {
+      "offline": false,
+      "latency": 562.5,
+      "downloadThroughput": 188743.68,
+      "uploadThroughput": 86400
+    },
+    "cpuRate": 4
+  },
+  "results": [
+    {
+      "run": 1,
+      "variant": "b",
+      "headlineVisibleAt": 1186,
+      "sawTwoHeadlines": true,
+      "swapAt": 1826,
+      "lcp": 2620,
+      "cls": 0.0286,
+      "frames": [
+        {
+          "t": 1186,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        },
+        {
+          "t": 1826,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "variant": "a",
+      "headlineVisibleAt": 1183,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1256,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1183,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "variant": "b",
+      "headlineVisibleAt": 1183,
+      "sawTwoHeadlines": true,
+      "swapAt": 1810,
+      "lcp": 2632,
+      "cls": 0.0286,
+      "frames": [
+        {
+          "t": 1183,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        },
+        {
+          "t": 1810,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 4,
+      "variant": "a",
+      "headlineVisibleAt": 1193,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1260,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1193,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 5,
+      "variant": "b",
+      "headlineVisibleAt": 1191,
+      "sawTwoHeadlines": true,
+      "swapAt": 1818,
+      "lcp": 2640,
+      "cls": 0.0286,
+      "frames": [
+        {
+          "t": 1191,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        },
+        {
+          "t": 1818,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 6,
+      "variant": "a",
+      "headlineVisibleAt": 1182,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1248,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1182,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 7,
+      "variant": "a",
+      "headlineVisibleAt": 1183,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1252,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1183,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 8,
+      "variant": "b",
+      "headlineVisibleAt": 1183,
+      "sawTwoHeadlines": true,
+      "swapAt": 1818,
+      "lcp": 2636,
+      "cls": 0.0286,
+      "frames": [
+        {
+          "t": 1183,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        },
+        {
+          "t": 1818,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 9,
+      "variant": "b",
+      "headlineVisibleAt": 1183,
+      "sawTwoHeadlines": true,
+      "swapAt": 1810,
+      "lcp": 2652,
+      "cls": 0.0286,
+      "frames": [
+        {
+          "t": 1183,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        },
+        {
+          "t": 1810,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 10,
+      "variant": "a",
+      "headlineVisibleAt": 1183,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1260,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1183,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    }
+  ]
+}

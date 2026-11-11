@@ -1,0 +1,21 @@
+{
+  "run": 1,
+  "frames": [
+    {
+      "t": 1186,
+      "visible": true,
+      "text": "Send invoices in minutes"
+    },
+    {
+      "t": 1826,
+      "visible": true,
+      "text": "Get paid faster with invoices that send themselves"
+    }
+  ],
+  "shotTimes": [
+    20,
+    1247,
+    1833,
+    2621
+  ]
+}

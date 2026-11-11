@@ -1,0 +1,180 @@
+{
+  "label": "evolve",
+  "runs": 10,
+  "variantBRuns": 7,
+  "runsWithFlicker": 0,
+  "medianHeadlineVisibleAt": 1182,
+  "medianLcp": 1256,
+  "maxCls": 0,
+  "throttling": {
+    "network": {
+      "offline": false,
+      "latency": 562.5,
+      "downloadThroughput": 188743.68,
+      "uploadThroughput": 86400
+    },
+    "cpuRate": 4
+  },
+  "results": [
+    {
+      "run": 1,
+      "variant": "b",
+      "headlineVisibleAt": 1178,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1252,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1178,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "variant": "b",
+      "headlineVisibleAt": 1188,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1268,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1188,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "variant": "b",
+      "headlineVisibleAt": 1188,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1256,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1188,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 4,
+      "variant": "a",
+      "headlineVisibleAt": 1188,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1256,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1188,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 5,
+      "variant": "a",
+      "headlineVisibleAt": 1178,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1248,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1178,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 6,
+      "variant": "a",
+      "headlineVisibleAt": 1176,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1248,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1176,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 7,
+      "variant": "b",
+      "headlineVisibleAt": 1177,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1256,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1177,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 8,
+      "variant": "b",
+      "headlineVisibleAt": 1185,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1256,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1185,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 9,
+      "variant": "b",
+      "headlineVisibleAt": 1179,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1248,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1179,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    },
+    {
+      "run": 10,
+      "variant": "b",
+      "headlineVisibleAt": 1188,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1256,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1188,
+          "visible": true,
+          "text": "Get paid faster with invoices that send themselves"
+        }
+      ]
+    }
+  ]
+}

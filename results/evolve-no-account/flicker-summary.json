@@ -1,0 +1,180 @@
+{
+  "label": "evolve-no-account",
+  "runs": 10,
+  "variantBRuns": 0,
+  "runsWithFlicker": 0,
+  "medianHeadlineVisibleAt": 1182.5,
+  "medianLcp": 1258,
+  "maxCls": 0,
+  "throttling": {
+    "network": {
+      "offline": false,
+      "latency": 562.5,
+      "downloadThroughput": 188743.68,
+      "uploadThroughput": 86400
+    },
+    "cpuRate": 4
+  },
+  "results": [
+    {
+      "run": 1,
+      "variant": "a",
+      "headlineVisibleAt": 1189,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1264,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1189,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "variant": "a",
+      "headlineVisibleAt": 1187,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1272,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1187,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "variant": "a",
+      "headlineVisibleAt": 1177,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1248,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1177,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 4,
+      "variant": "a",
+      "headlineVisibleAt": 1186,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1256,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1186,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 5,
+      "variant": "a",
+      "headlineVisibleAt": 1188,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1264,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1188,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 6,
+      "variant": "a",
+      "headlineVisibleAt": 1187,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1260,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1187,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 7,
+      "variant": "a",
+      "headlineVisibleAt": 1178,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1264,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1178,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 8,
+      "variant": "a",
+      "headlineVisibleAt": 1178,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1248,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1178,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 9,
+      "variant": "a",
+      "headlineVisibleAt": 1179,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1248,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1179,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    },
+    {
+      "run": 10,
+      "variant": "a",
+      "headlineVisibleAt": 1177,
+      "sawTwoHeadlines": false,
+      "swapAt": null,
+      "lcp": 1248,
+      "cls": 0,
+      "frames": [
+        {
+          "t": 1177,
+          "visible": true,
+          "text": "Send invoices in minutes"
+        }
+      ]
+    }
+  ]
+}
