@@ -63,7 +63,13 @@ const UA =
   "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36";
 for (let i = 0; i < 20; i++) await fetch(values.url, { headers: { "user-agent": UA } }).then((r) => r.text());
 
-const browser = await chromium.launch({ channel: "chrome", headless: true });
+// Without this flag navigator.webdriver is true, and analytics beacons that
+// skip automated browsers (Evolve's does) would sit the test out.
+const browser = await chromium.launch({
+  channel: "chrome",
+  headless: true,
+  args: ["--disable-blink-features=AutomationControlled"],
+});
 const results = [];
 let filmstripDone = false;
 
