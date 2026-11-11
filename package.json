@@ -1,0 +1,31 @@
+{
+  "name": "nextjs-ab-testing-without-flicker",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "next typegen && tsc --noEmit",
+    "bench:lighthouse": "node bench/lighthouse.mjs",
+    "bench:flicker": "node bench/flicker.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "lighthouse": "13.6.0",
+    "playwright-core": "1.64.1",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}
