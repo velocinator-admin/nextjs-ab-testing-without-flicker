@@ -1,10 +1,12 @@
-import { Hero } from "@/components/hero";
+import { Optimizable, evolveMetadata, evolveStaticParams, withEvolve } from "next-evolve";
+import OptimizableHero from "@/components/optimizable-hero";
 import { experiment } from "@/lib/experiment";
 
-export default function Home() {
+function Home() {
   return (
     <>
-      <Hero headline={experiment.variants.a.headline} />
+      {/* The props here are the control. Variants come from the signed bundle. */}
+      <Optimizable id="hero" component={OptimizableHero} props={{ headline: experiment.variants.a.headline }} />
       <Features />
     </>
   );
@@ -28,3 +30,10 @@ function Features() {
     </section>
   );
 }
+
+// Static mode (next-evolve): one cached render per variant under [evolve].
+export const dynamicParams = true;
+export const generateStaticParams = evolveStaticParams;
+export const revalidate = 3600;
+export const generateMetadata = evolveMetadata("/");
+export default withEvolve(Home, { path: "/" });

@@ -6,3 +6,6 @@ next-env.d.ts
 .env*.local
 bench/out/
 .DS_Store
+
+# Evolve build bundle
+.evolve/

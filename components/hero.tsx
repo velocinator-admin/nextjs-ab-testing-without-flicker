@@ -15,7 +15,7 @@ export function Hero({
       <h1 data-testid="headline">{headline}</h1>
       <p className="subline">{subline}</p>
       <div className="actions">
-        <a className="cta" href="/signup" data-testid="cta">
+        <a className="cta" href="/signup" data-testid="cta" data-evolve-goal="signup">
           {cta}
         </a>
         <a className="secondary" href="#how">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import { EvolveScript } from "next-evolve/client";
 
 export const metadata: Metadata = {
   title: "Acme Invoicing",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </nav>
         </header>
         <main>{children}</main>
+        <EvolveScript />
       </body>
     </html>
   );

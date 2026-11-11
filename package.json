@@ -10,14 +10,18 @@
     "start": "next start",
     "typecheck": "next typegen && tsc --noEmit",
     "bench:lighthouse": "node bench/lighthouse.mjs",
-    "bench:flicker": "node bench/flicker.mjs"
+    "bench:flicker": "node bench/flicker.mjs",
+    "prebuild": "next-evolve pull"
   },
   "dependencies": {
     "next": "16.4.3",
+    "next-evolve": "0.9.0",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
   },
   "devDependencies": {
+    "@next-evolve/protocol": "1.4.0",
     "@types/node": "22.19.1",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
