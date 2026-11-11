@@ -1,10 +1,21 @@
+import { notFound } from "next/navigation";
 import { Hero } from "@/components/hero";
-import { experiment } from "@/lib/experiment";
+import { experiment, type VariantKey } from "@/lib/experiment";
 
-export default function Home() {
+// One static page per variant, built ahead of time. proxy.ts rewrites "/" here.
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return Object.keys(experiment.variants).map((variant) => ({ variant }));
+}
+
+export default async function Home({ params }: { params: Promise<{ variant: string }> }) {
+  const { variant } = await params;
+  const v = experiment.variants[variant as VariantKey];
+  if (!v) notFound();
   return (
     <>
-      <Hero headline={experiment.variants.a.headline} />
+      <Hero headline={v.headline} />
       <Features />
     </>
   );
